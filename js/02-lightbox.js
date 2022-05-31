@@ -15,8 +15,7 @@ return items.map(({ preview, original, description }) => {
         <img 
         class="gallery__image" 
         src="${preview}" 
-        alt="${description}"
-        title="${description}"/>
+        alt="${description}"/>
     </a>`;
 }).join('');  
 }
@@ -24,8 +23,9 @@ return items.map(({ preview, original, description }) => {
 // 2.Инициализация библиотеки после того как элементы галереи созданы и добавлены в div.gallery. 
 // Для этого ознакомься с документацией SimpleLightbox - в первую очередь секции «Usage» и «Markup».
 // new SimpleLightbox('.some-element a', { /* options */ });
-let gallery = new SimpleLightbox('.gallery a');
-console.log(gallery);
+let gallery = new SimpleLightbox('.gallery a', { captionsData: "alt", captionDelay: "250"});
+
+
 // Посмотри в документации секцию «Options» и добавь отображение подписей к изображениям из 
 // атрибута alt.Пусть подпись будет снизу и появляется через 250 миллисекунд после открытия 
 // изображения.
